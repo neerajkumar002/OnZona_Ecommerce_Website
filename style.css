@@ -22,7 +22,6 @@ li {
 a {
   text-decoration: none;
 }
- 
 
 /* navbar css */
 .navbar {
@@ -95,4 +94,67 @@ a {
     left: 20px;
     top: 2px;
   }
+}
+
+/* footer css */
+footer {
+  width: 100%;
+  background-color: var(--secondaryColor);
+}
+
+.ft-icon-section {
+  height: 200px;
+}
+
+.ft-icon-container {
+  text-align: center;
+  padding: 50px 0;
+  i {
+    font-size: 3rem;
+    color: var(--w-color);
+    margin: 0 10px;
+    filter: drop-shadow(0 0 20px var(--primaryColor));
+  }
+}
+
+.ft-item-container ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.3rem;
+}
+.ft-item a {
+  color: var(--light-white);
+  text-transform: uppercase;
+}
+.ft-item a:hover {
+  color: var(--primaryColor);
+}
+
+.ft-own-section {
+  height: 50px;
+  background-color: var(--b-color);
+  color: var(--w-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    color: var(--light-white);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 767px) {
+  .ft-icon-container i {
+    font-size: 30px;
+  }
+
+  .ft-item a{
+    font-size: 1.1rem;
+  }
+
+  .ft-own-section p{
+    font-size: 0.8rem;
+  }
+
 }

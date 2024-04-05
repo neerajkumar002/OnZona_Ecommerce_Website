@@ -23,8 +23,6 @@ export const homeQuantityToggle = (id, event, stock) => {
     }
 
 
-    console.log(quantity);
-    console.log(productQuantity);
 
     productQuantity.innerText = quantity;
 

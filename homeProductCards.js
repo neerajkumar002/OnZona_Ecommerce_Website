@@ -6,6 +6,11 @@ const mainProductsContainer = document.querySelector(
 );
 const productTemplate = document.querySelector("#productTemplate");
 
+
+
+
+
+
 export const showProductContainer = (products) => {
   if (!products) {
     return false;

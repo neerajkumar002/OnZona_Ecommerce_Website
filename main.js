@@ -1,5 +1,5 @@
-
 // import  functions
-import { getProductData } from './getProductData';
- 
+import { getProductData } from "./getProductData";
+
+
 getProductData();

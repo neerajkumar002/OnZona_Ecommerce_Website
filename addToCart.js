@@ -1,4 +1,5 @@
 import { getProductsFromLocalStorage } from "./getProductsFromLocalStorage";
+import { setProductInLocalStorage } from "./setProductsInLocalStorage";
 import { updateCartValue } from "./updateCartValue";
 
 export const addToCart = (event, id) => {
@@ -11,13 +12,22 @@ export const addToCart = (event, id) => {
   price = Number(price.replace("$", ""));
   price = price * quantity;
 
-  localStorageProductArr.push({ id, price, quantity });
-
-  localStorage.setItem(
-    "cartProductsLS",
-    JSON.stringify(localStorageProductArr)
+  const existingProduct = localStorageProductArr.find(
+    (currentProItem) => currentProItem.id === id
   );
 
+  if (existingProduct === undefined) {
+    localStorageProductArr.push({ id, price, quantity });
+  } else {
+    existingProduct.quantity += quantity;
+    existingProduct.price = price * existingProduct.quantity;
+  }
+  console.log(localStorageProductArr);
+  setProductInLocalStorage(localStorageProductArr);
+
   //   update cart value
-  updateCartValue(localStorageProductArr);
+
+  updateCartValue();
 };
+
+updateCartValue();

@@ -36,66 +36,19 @@
             <i class="fa-solid fa-user"></i>
           </div>
           <div class="cart-icon">
-            <i class="fa-solid fa-cart-shopping"></i
-            ><span class="cart-value">0</span>
+            <a href="./addToCart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="cart-value">0</span>
+            </a>
           </div>
         </div>
       </nav>
     </header>
     <!-- Header End -->
-    <!--      add to cart section Start -->
-    <section class="add-to-cart-section">
-      <div class="cart-container">
-        <section id="cart-product-list">
-          <template class="product-card-template">
-            <div class="cards">
-              <article class="productInformation">
-                <div class="cartImageContainer">
-                  <img src="" alt="" class="product-img" />
-                </div>
-                <div class="product-details">
-                  <div class="product-name-remove-btn">
-                    <h2 class="product-name"></h2>
-                    <button class="remove-to-cart-button">
-                      <i class="fa-solid fa-xmark"></i>
-                    </button>
-                  </div>
-                  <div class="product-price-quantity">
-                    <p class="product-price"></p>
+  
 
-                    <div class="stockElementCart">
-                      <div class="cartIncrement">+</div>
-                      <p class="productQuantity">1</p>
-                      <div class="cartDecrement">-</div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </template>
-        </section>
-        <section class="productTotalPriceSection">
-          <div class="productTotalPriceElement">
-            <p>Selected offer Summary</p>
-            <div>
-              <p>Sub Total</p>
-              <p class="product-sub-total">0</p>
-            </div>
-            <div>
-              <p>Tax</p>
-              <p class="product-tax">$50</p>
-            </div>
-            <hr />
-            <div class="final-total">
-              <p>Final Total</p>
-              <p class="product-final-total">0</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <!--      add to cart section End -->
     <!-- Footer start -->
+
     <footer>
       <section class="ft-icon-section">
         <div class="ft-icon-container">
@@ -118,6 +71,6 @@
     </footer>
     <!-- footer end -->
 
-    <script type="module" src="showAddToCartCards.js"></script>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>

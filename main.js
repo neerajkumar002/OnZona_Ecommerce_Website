@@ -1,5 +1,4 @@
 // import  functions
-import { getProductData } from "./getProductData";
+import { handleHomeProductApi } from "./homeProductCards";
 
-
-getProductData();
+handleHomeProductApi();

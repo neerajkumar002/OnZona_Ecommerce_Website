@@ -1,15 +1,12 @@
 import { homeQuantityToggle } from "./homeQuantityToggle";
 import { addToCart } from "./addToCart";
+import { getProductData } from "./getProductData";
+import { toast } from "./toast"; 
 
 const mainProductsContainer = document.querySelector(
   ".main-products-container"
 );
 const productTemplate = document.querySelector("#productTemplate");
-
-
-
-
-
 
 export const showProductContainer = (products) => {
   if (!products) {
@@ -26,6 +23,9 @@ export const showProductContainer = (products) => {
     productClone.querySelector(".product-image").alt = title;
     productClone.querySelector(".productName").textContent = title;
     productClone.querySelector(".rate").textContent = rating.rate;
+    productClone
+      .querySelector(".productQuantity")
+      .setAttribute("id", `quantity-id-${id}`);
     productClone.querySelector(
       ".ratingCount"
     ).textContent = `${rating.count} ratings`;
@@ -37,14 +37,20 @@ export const showProductContainer = (products) => {
         homeQuantityToggle(id, event, 25);
       });
 
+    // add to cart product button
     productClone
       .querySelector(".add-to-cart-button")
       .addEventListener("click", (event) => {
-
         addToCart(event, id);
+        toast("success");
       });
 
     /*   append product Clone */
     mainProductsContainer.append(productClone);
   });
 };
+
+export async function handleHomeProductApi() {
+  const products = await getProductData();
+  showProductContainer(products);
+}
